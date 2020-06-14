@@ -1,7 +1,7 @@
 import gym
 import numpy as np
 
-ALPHA = 0.1
+ALPHA = 0.01
 GAMMA = 0.9
 
 class Model:
@@ -62,7 +62,7 @@ env = gym.make('CartPole-v0')
 model = Model()
 lengths = []
 from tqdm import tqdm
-for i in tqdm(range(40000)):
+for i in tqdm(range(10000)):
     lengths.append(play_episode(model, env))
 
 for row in model.Q:
